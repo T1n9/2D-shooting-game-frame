@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eacdd84b-0440-4b76-848a-971a80f0d82c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/com/game/main/huaji.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/game/main/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/game/main/KeyInput.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46735668">
+    <splitter split-orientation="horizontal" split-proportion="0.34184515">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -98,8 +95,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/game/main/Spawn.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="267">
-                  <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+                <state relative-caret-position="161">
+                  <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -144,12 +141,12 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/game/main/KeyInput.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+                <state relative-caret-position="281">
+                  <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#200#201#0" expanded="true" />
-                    <element signature="e#238#239#0" expanded="true" />
+                    <element signature="e#326#327#0" expanded="true" />
+                    <element signature="e#364#365#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -261,7 +258,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/game/main/Handler.java" />
         <option value="$PROJECT_DIR$/src/com/game/main/Scene_ID.java" />
-        <option value="$PROJECT_DIR$/src/com/game/main/KeyInput.java" />
         <option value="$PROJECT_DIR$/src/com/game/main/HUD.java" />
         <option value="$PROJECT_DIR$/src/com/game/main/Game.java" />
         <option value="$PROJECT_DIR$/src/com/game/main/MouseInput.java" />
@@ -278,10 +274,11 @@
         <option value="$PROJECT_DIR$/src/com/game/main/BasicEnemy.java" />
         <option value="$PROJECT_DIR$/src/com/game/main/GameCharacter.java" />
         <option value="$PROJECT_DIR$/src/com/game/main/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/game/main/KeyInput.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="35" />
     <option name="y" value="56" />
     <option name="width" value="1400" />
@@ -296,7 +293,28 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="alien-shooter-style-game-frame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alien-shooter-style-game-frame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alien-shooter-style-game-frame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alien-shooter-style-game-frame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="alien-shooter-style-game-frame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="alien-shooter-style-game-frame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -355,10 +373,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09742121" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1303725" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -574,18 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/game/main/KeyInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-            <element signature="e#238#239#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/game/main/BasicEnemy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1334">
@@ -633,10 +639,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/game/main/Spawn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="25" column="50" lean-forward="true" selection-start-line="25" selection-start-column="50" selection-end-line="25" selection-end-column="50" />
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/game/main/KeyInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
           </folding>
         </state>
       </provider>
