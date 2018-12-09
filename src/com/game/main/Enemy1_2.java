@@ -21,13 +21,13 @@ public class Enemy1_2 extends BasicEnemy {
     }
     public void tick(){
         super.tick();
-        int diffx = player.getX() - x;
-        int diffy = player.getY() - y;
         int playerx = player.getX();
         int playery = player.getY();
-        float distance = (float)Math.sqrt((x-playerx)*(x-playerx)
-                + (y-playery)*(y-playery));
-        velX = (int)(4*diffx/distance);
-        velY = (int)(4*diffy/distance);
+        int diffy = playery - y;
+        int diffx = playerx - x;
+        float distance = (float)Math.sqrt(diffx * diffx
+                + diffy * diffy);
+        velX = Math.round(3*diffx/distance);
+        velY = Math.round(3*diffy/distance);
     }
 }
