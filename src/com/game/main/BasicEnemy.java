@@ -5,6 +5,7 @@ import java.awt.*;
 public class BasicEnemy extends GameCharacter {
 
     protected int bullet_resistance = 10;
+    protected Player player;
 
     public BasicEnemy(int x, int y, ID id, Handler handler) {
         super(x, y, id);
@@ -21,7 +22,10 @@ public class BasicEnemy extends GameCharacter {
         velY = 2;
         got_hurt = false;
         this.handler = handler;
-
+        for(GameObject object: handler.objects){
+            if(object.getId() == ID.Player)
+                player = (Player) object;
+        }
     }
 
     protected void collision(){

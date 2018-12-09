@@ -15,6 +15,7 @@ public class Scene1_1 extends AbstractScene {
         for(int i = 0; i<5; ++i){
             handler.add_object(new Enemy1_1(Utility.r.nextInt(Game.WIDTH), Utility.r.nextInt(Game.HEIGHT), ID.Enemy_1_1, handler));
         }
+        handler.add_object(new Enemy1_2(Utility.r.nextInt(Game.WIDTH), Utility.r.nextInt(Game.HEIGHT), ID.Enemy_1_2, handler));
     }
 
     protected void draw_gate(Graphics g) {
@@ -30,7 +31,7 @@ public class Scene1_1 extends AbstractScene {
     }
 
     protected void draw_background(Graphics g){
-        g.setColor(Color.red);
+        g.setColor(Color.gray);
         g.fillRect(0,0, Game.WIDTH, Game.HEIGHT);
     }
     protected void draw_characters(Graphics g){
