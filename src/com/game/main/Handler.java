@@ -1,10 +1,12 @@
 package com.game.main;
 
+import com.game.gameobject.GameObject;
+
 import java.awt.*;
 import java.util.LinkedList;
 
 public class Handler {
-    LinkedList<GameObject> objects  = new LinkedList<GameObject>();
+    public LinkedList<GameObject> objects  = new LinkedList<GameObject>();
 
     public void tick(){
         for(GameObject object : objects)

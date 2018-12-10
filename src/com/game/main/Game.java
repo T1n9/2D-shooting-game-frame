@@ -1,5 +1,9 @@
 package com.game.main;
 
+import com.game.mousekeyboard.MouseInput;
+import com.game.mousekeyboard.KeyInput;
+import com.game.scene.StartScene;
+
 import java.awt.*;
 
 

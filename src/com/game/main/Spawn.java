@@ -1,5 +1,7 @@
 package com.game.main;
 
+import com.game.gameobject.*;
+
 import javax.print.attribute.HashDocAttributeSet;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.Iterator;
@@ -22,7 +24,7 @@ public class Spawn {
         Iterator<GameObject> it = handler.objects.iterator();
         while (it.hasNext()){
             GameObject tmp = it.next();
-            if(tmp.id == ID.BasicBullet){
+            if(tmp.getId() == ID.BasicBullet){
                 if(tmp.getX()<0 || tmp.getY()<0 ||
                         tmp.getX()>Game.WIDTH || tmp.getY()>Game.HEIGHT)
                     it.remove();
