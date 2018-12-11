@@ -5,7 +5,7 @@ import javax.crypto.interfaces.PBEKey;
 import com.game.utility.Utility;
 import java.awt.*;
 
-public class HUD extends GameObject{
+public final class HUD extends GameObject{
     public static int HEALTH = 100;
     private int green_value = 255;
 

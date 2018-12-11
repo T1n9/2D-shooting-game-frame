@@ -22,7 +22,7 @@ public abstract class GameCharacter extends GameObject {
         velX = velY = 0;
     }
     abstract public void fire_shots();
-    public int get_hp(){
+    public final int get_hp(){
         return HP;
     }
     protected abstract void collision();

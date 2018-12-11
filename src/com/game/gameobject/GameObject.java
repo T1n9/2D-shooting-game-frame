@@ -19,34 +19,34 @@ public abstract class GameObject {
     public abstract void render(Graphics g);
     public abstract Rectangle get_bounds();
 
-    public void setX(int x){
+    public final void setX(int x){
         this.x = x;
     }
-    public void setY(int y){
+    public final void setY(int y){
         this.y = y;
     }
-    public int getX(){
+    public final int getX(){
         return x;
     }
-    public int getY(){
+    public final int getY(){
         return y;
     }
-    public void setId(ID id){
+    public final void setId(ID id){
         this.id = id;
     }
-    public ID getId(){
+    public final ID getId(){
         return id;
     }
-    public void setVelX(int velx){
+    public final void setVelX(int velx){
         this.velX = velx;
     }
-    public void setVelY(int velY){
+    public final void setVelY(int velY){
         this.velY = velY;
     }
-    public int getVelX(){
+    public final int getVelX(){
         return velX;
     }
-    public int getVelY(){
+    public final int getVelY(){
         return velY;
     }
 }

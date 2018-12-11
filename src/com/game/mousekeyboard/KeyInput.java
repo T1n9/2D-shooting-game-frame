@@ -9,7 +9,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.nio.file.FileAlreadyExistsException;
 
-public class KeyInput extends KeyAdapter {
+public final class KeyInput extends KeyAdapter {
     private Handler handler;
     private boolean[] key_down = {false, false, false, false};
 

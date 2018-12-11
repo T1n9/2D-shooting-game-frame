@@ -9,7 +9,7 @@ import com.game.main.*;
 import java.awt.event.*;
 import java.io.ObjectStreamException;
 
-public class MouseInput implements MouseListener, MouseWheelListener, MouseMotionListener {
+public final class MouseInput implements MouseListener, MouseWheelListener, MouseMotionListener {
 
     public static int mouse_pos_x;
     public static int mouse_pos_y;

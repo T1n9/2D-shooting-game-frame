@@ -6,7 +6,7 @@ import javax.print.attribute.HashDocAttributeSet;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.Iterator;
 
-public class Spawn {
+public final class Spawn {
 
     private Handler handler;
     private HUD hud = HUD.get_instance();
