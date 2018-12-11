@@ -3,10 +3,7 @@ package com.game.scene;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
-import com.game.gameobject.Enemy1_1;
-import com.game.gameobject.Enemy1_2;
-import com.game.gameobject.ID;
-import com.game.gameobject.Player;
+import com.game.gameobject.*;
 import com.game.main.*;
 import com.game.utility.Utility;
 
@@ -23,6 +20,7 @@ public class Scene1_1 extends AbstractScene {
             handler.add_object(new Enemy1_1(Utility.r.nextInt(Game.WIDTH), Utility.r.nextInt(Game.HEIGHT), ID.Enemy_1_1, handler));
         }
         handler.add_object(new Enemy1_2(Utility.r.nextInt(Game.WIDTH), Utility.r.nextInt(Game.HEIGHT), ID.Enemy_1_2, handler));
+
     }
 
     protected void draw_gate(Graphics g) {

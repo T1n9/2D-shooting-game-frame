@@ -18,13 +18,13 @@ public abstract class AbstractScene{
     protected HUD hud = HUD.get_instance();
     protected boolean running;
     protected Scene_ID own_scene_id;
-    private Spawn spawner;
+    private MapCleaner spawner;
 
     public AbstractScene(Game game, Handler handler, boolean running){
         this.game = game;
         this.handler = handler;
         this.running = running;
-        this.spawner = new Spawn(handler);
+        this.spawner = new MapCleaner(handler);
     }
 
     public abstract void add_characters(Handler handler);

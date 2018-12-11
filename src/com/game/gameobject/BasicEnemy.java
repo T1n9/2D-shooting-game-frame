@@ -17,8 +17,8 @@ public class BasicEnemy extends GameCharacter {
 
         width = 39;
         height = 39;
-        margin_x = 45;
-        margin_y = 70;
+        margin_x = width;
+        margin_y = height;
         HP = 100;
 
         velX = 2;
@@ -42,7 +42,7 @@ public class BasicEnemy extends GameCharacter {
         //@todo 给enemy加上碰撞效果
 
         for(GameObject object: handler.objects){
-            if(object instanceof BasicBullet){
+            if(object instanceof PlayerBullet){
                 if(get_bounds().intersects(object.get_bounds())){
                     HP -= bullet_resistance;
                     got_hurt = true;
@@ -55,7 +55,7 @@ public class BasicEnemy extends GameCharacter {
     public void fire_shots() {
     }
 
-    private int bounce(int movemoment, int vel, int max_limit){
+    protected int bounce(int movemoment, int vel, int max_limit){
         return ((movemoment <= 0 || movemoment >= max_limit) ? (-1)*vel : vel);
     }
 

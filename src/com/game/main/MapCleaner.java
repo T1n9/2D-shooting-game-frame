@@ -6,25 +6,18 @@ import javax.print.attribute.HashDocAttributeSet;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.Iterator;
 
-public final class Spawn {
+public final class MapCleaner {
 
     private Handler handler;
     private HUD hud = HUD.get_instance();
-    public static boolean spawn_bullet = false;
 
     private int score_keep = 0;
 
-    private void spawn_bullet(){
-        if(spawn_bullet){
-            handler.add_object(new BasicBullet(Player.bullet_start_pos_x, Player.bullet_start_pos_y, Player.mouse_angle, ID.BasicBullet, handler));
-            spawn_bullet = false;
-        }
-    }
     private void remove_bullet(){
         Iterator<GameObject> it = handler.objects.iterator();
         while (it.hasNext()){
             GameObject tmp = it.next();
-            if(tmp.getId() == ID.BasicBullet){
+            if(tmp instanceof BasicBullet){
                 if(tmp.getX()<0 || tmp.getY()<0 ||
                         tmp.getX()>Game.WIDTH || tmp.getY()>Game.HEIGHT)
                     it.remove();
@@ -43,11 +36,10 @@ public final class Spawn {
     }
 
 
-    public Spawn(Handler handler){
+    public MapCleaner(Handler handler){
         this.handler = handler;
     }
     public void tick(){
-        spawn_bullet();
         remove_bullet();
         remove_monster();
 

@@ -2,22 +2,14 @@ package com.game.gameobject;
 
 import com.game.main.Game;
 import com.game.main.Handler;
-import com.game.main.Spawn;
 import com.game.scene.AbstractScene;
 import com.game.scene.Scene1_1;
 import com.game.scene.Scene_ID;
 import com.game.scene.StartScene;
 import com.game.utility.Utility;
 import com.game.mousekeyboard.MouseInput;
-import javax.swing.text.StyledEditorKit;
+
 import java.awt.*;
-import java.awt.image.ImageObserver;
-import java.nio.file.FileAlreadyExistsException;
-import java.security.PrivateKey;
-import java.security.PublicKey;
-import java.security.Signature;
-import java.util.PrimitiveIterator;
-import java.util.Random;
 
 public class Player extends GameCharacter {
 
@@ -53,7 +45,7 @@ public class Player extends GameCharacter {
         }
         //@todo 加上碰撞效果, 然后有后退效果
         for(GameObject object: handler.objects){
-            if(object instanceof BasicEnemy){
+            if(object instanceof BasicEnemy || object instanceof MonsterBullet){
                 if(get_bounds().intersects(object.get_bounds())){
                     --HUD.HEALTH;
                     got_hurt = true;
@@ -79,14 +71,10 @@ public class Player extends GameCharacter {
         }
     }
     private double calculate_mouse_angle(){
-        double side_a = MouseInput.mouse_pos_y - y;
-        double side_b = MouseInput.mouse_pos_x - x;
-        double angle = Math.toDegrees(Math.atan(side_a/side_b));
-        if(MouseInput.mouse_pos_x < x)
-            angle += 180;
-        else if(MouseInput.mouse_pos_x > x && MouseInput.mouse_pos_y < y)
-            angle += 360;
-        return angle;
+        int vx = MouseInput.mouse_pos_x - x;
+        int vy = MouseInput.mouse_pos_y - y;
+        return Utility.get_angle_from_vector(vx, vy);
+
     }
 
     public void tick() {
@@ -121,6 +109,6 @@ public class Player extends GameCharacter {
         bullet_start_pos_x = player_center_pos_x + (int)(radius * Math.cos(Math.toRadians(mouse_angle)));
         bullet_start_pos_y = player_center_pos_y + (int)(radius * Math.sin(Math.toRadians(mouse_angle)));
 
-        Spawn.spawn_bullet = true;
+        handler.add_object(new PlayerBullet(Player.bullet_start_pos_x, Player.bullet_start_pos_y, Player.mouse_angle, ID.BasicBullet, handler));
     }
 }
