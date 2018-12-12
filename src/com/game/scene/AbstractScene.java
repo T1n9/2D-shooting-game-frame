@@ -4,10 +4,12 @@ import com.game.gameobject.GameObject;
 import com.game.gameobject.HUD;
 import com.game.gameobject.ID;
 import com.game.main.*;
+import com.game.main.GameMenu;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.util.Iterator;
+
 
 public abstract class AbstractScene{
 
@@ -16,12 +18,23 @@ public abstract class AbstractScene{
     protected Handler handler;
     protected Game game;
     protected HUD hud = HUD.get_instance();
-    protected boolean running;
+    private boolean running;
     protected Scene_ID own_scene_id;
     private MapCleaner spawner;
 
+    public enum MODE{
+        Menu,
+        Game
+    }
+    private static MODE mode = MODE.Menu;
+    public static void to_game_mode(){
+        mode = MODE.Game;
+    }
+    private GameMenu menu = GameMenu.get_instance();
+
     public AbstractScene(Game game, Handler handler, boolean running){
         this.game = game;
+        this.game.addKeyListener(menu);
         this.handler = handler;
         this.running = running;
         this.spawner = new MapCleaner(handler);
@@ -29,12 +42,12 @@ public abstract class AbstractScene{
 
     public abstract void add_characters(Handler handler);
 
-    protected void open_new_scene(AbstractScene new_scane){
+    private void open_new_scene(AbstractScene new_scane){
         leave_scene();
         new_scane.open_scene();
     }
 
-    protected void leave_scene(){
+    private void leave_scene(){
         Iterator<GameObject> it = handler.objects.iterator();
         while (it.hasNext()){
             GameObject tmp = it.next();
@@ -42,20 +55,7 @@ public abstract class AbstractScene{
                 it.remove();
         }
     }
-    protected void render(){
-        BufferStrategy bs = game.getBufferStrategy();
-        if(bs == null){
-            game.createBufferStrategy(3);
-            return;
-        }
-        Graphics g = bs.getDrawGraphics();
 
-        draw_background(g);
-        draw_gate(g);
-        draw_characters(g);
-        g.dispose();
-        bs.show();
-    }
     protected abstract void draw_gate(Graphics g);
     protected abstract void draw_background(Graphics g);
     protected abstract void draw_characters(Graphics g);
@@ -109,8 +109,33 @@ public abstract class AbstractScene{
     }
 
     protected void tick(){
-        handler.tick();
-        spawner.tick();
-        scene_tick();
+        if(mode == MODE.Menu)
+            menu.tick();
+        else if(mode == MODE.Game){
+            handler.tick();
+            spawner.tick();
+            scene_tick();
+        }
+    }
+
+    protected void render(){
+        BufferStrategy bs = game.getBufferStrategy();
+        if(bs == null){
+            game.createBufferStrategy(3);
+            return;
+        }
+        Graphics g = bs.getDrawGraphics();
+
+        if(mode == MODE.Menu){
+            draw_background(g);
+            menu.render(g);
+        }
+        else if(mode == MODE.Game){
+            draw_background(g);
+            draw_gate(g);
+            draw_characters(g);
+        }
+        g.dispose();
+        bs.show();
     }
 }
