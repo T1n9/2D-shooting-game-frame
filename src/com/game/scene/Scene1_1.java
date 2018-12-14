@@ -10,7 +10,7 @@ import com.game.utility.Utility;
 public class Scene1_1 extends AbstractScene {
 
 
-    Scene1_1(Game game, Handler handler, boolean running){
+    public Scene1_1(Game game, Handler handler, boolean running){
         super(game, handler, running);
         own_scene_id = Scene_ID.Scene_1_1;
     }
