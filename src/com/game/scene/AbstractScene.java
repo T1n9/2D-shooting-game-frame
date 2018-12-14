@@ -51,12 +51,7 @@ public abstract class AbstractScene{
     }
 
     private void leave_scene(){
-        Iterator<GameObject> it = handler.objects.iterator();
-        while (it.hasNext()){
-            GameObject tmp = it.next();
-            if(tmp.getId() != ID.HUD)
-                it.remove();
-        }
+        handler.objects.removeIf(x -> x.getId() != ID.HUD);
     }
 
     protected abstract void draw_gate(Graphics g);

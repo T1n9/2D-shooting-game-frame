@@ -14,25 +14,12 @@ public final class MapCleaner {
     private int score_keep = 0;
 
     private void remove_bullet(){
-        Iterator<GameObject> it = handler.objects.iterator();
-        while (it.hasNext()){
-            GameObject tmp = it.next();
-            if(tmp instanceof BasicBullet){
-                if(tmp.getX()<0 || tmp.getY()<0 ||
-                        tmp.getX()>Game.WIDTH || tmp.getY()>Game.HEIGHT)
-                    it.remove();
-            }
-        }
+        handler.objects.removeIf(x -> x instanceof BasicBullet &&
+                (x.getX() < 0|| x.getY() <0 || x.getX() > Game.WIDTH || x.getY() > Game.HEIGHT));
     }
     private void remove_monster(){
-        Iterator<GameObject> it = handler.objects.iterator();
-        while (it.hasNext()){
-            GameObject tmp = it.next();
-            if(tmp instanceof BasicEnemy){
-                if(((BasicEnemy) tmp).get_hp() <= 0)
-                    it.remove();
-            }
-        }
+        handler.objects.removeIf(x -> x instanceof BasicEnemy &&
+                ((BasicEnemy) x).get_hp() <= 0);
     }
 
 
