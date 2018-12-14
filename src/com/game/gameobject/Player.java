@@ -1,6 +1,8 @@
 package com.game.gameobject;
 
+import com.game.main.AudioPlayer;
 import com.game.main.Game;
+import com.game.main.GameMenu;
 import com.game.main.Handler;
 import com.game.scene.AbstractScene;
 import com.game.scene.Scene1_1;
@@ -76,6 +78,12 @@ public class Player extends GameCharacter {
         return Utility.get_angle_from_vector(vx, vy);
 
     }
+    private void game_over(){
+        if(HUD.HEALTH <= 0) {
+            GameMenu.menu_to_gameover();
+            AbstractScene.to_menu_mode();
+        }
+    }
 
     public void tick() {
         mouse_angle = calculate_mouse_angle();
@@ -87,7 +95,7 @@ public class Player extends GameCharacter {
         weapon.tick(x,y, mouse_angle, width, height);
         collision();
         enter_new_scene();
-
+        game_over();
     }
 
 
@@ -101,6 +109,7 @@ public class Player extends GameCharacter {
     }
 
     public void fire_shots() {
+        AudioPlayer.get_sound("shoot").play();
         int player_center_pos_x = x + width/2;
         int player_center_pos_y = y + height/2;
         mouse_angle = calculate_mouse_angle();

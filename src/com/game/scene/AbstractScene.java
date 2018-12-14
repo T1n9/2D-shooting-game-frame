@@ -30,6 +30,9 @@ public abstract class AbstractScene{
     public static void to_game_mode(){
         mode = MODE.Game;
     }
+    public static void to_menu_mode(){
+        mode = MODE.Menu;
+    }
     private GameMenu menu = GameMenu.get_instance();
 
     public AbstractScene(Game game, Handler handler, boolean running){

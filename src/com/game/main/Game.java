@@ -23,6 +23,8 @@ public class Game extends Canvas implements Runnable {
 		this.addKeyListener(new KeyInput(handler));
 		this.addMouseListener(new MouseInput(handler));
 		this.addMouseMotionListener(new MouseInput(handler));
+		AudioPlayer.load();
+		AudioPlayer.get_music("music").loop();
 		new Window(WIDTH, HEIGHT, "荒野大滑稽", this);
 
 		//		handler.add_object(new Player(WIDTH/2+66, HEIGHT/2, ID.Player2));
