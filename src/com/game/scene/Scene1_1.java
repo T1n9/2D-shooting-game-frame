@@ -10,7 +10,7 @@ import com.game.utility.Utility;
 public class Scene1_1 extends AbstractScene {
 
 
-    public Scene1_1(Game game, Handler handler, boolean running){
+    Scene1_1(Game game, Handler handler, boolean running){
         super(game, handler, running);
         own_scene_id = Scene_ID.Scene_1_1;
     }
@@ -19,8 +19,7 @@ public class Scene1_1 extends AbstractScene {
         for(int i = 0; i<5; ++i){
             handler.add_object(new Enemy1_1(Utility.r.nextInt(Game.WIDTH), Utility.r.nextInt(Game.HEIGHT), ID.Enemy_1_1, handler));
         }
-        handler.add_object(new Enemy1_2(Utility.r.nextInt(Game.WIDTH), Utility.r.nextInt(Game.HEIGHT), ID.Enemy_1_2, handler));
-
+        handler.add_object(new Boss_1(Utility.r.nextInt(Game.WIDTH/2), Utility.r.nextInt(Game.HEIGHT/2), ID.Boss_1, handler));
     }
 
     protected void draw_gate(Graphics g) {

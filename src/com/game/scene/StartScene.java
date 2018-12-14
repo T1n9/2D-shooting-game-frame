@@ -1,9 +1,6 @@
 package com.game.scene;
 
-import com.game.gameobject.BasicEnemy;
-import com.game.gameobject.Boss_1;
-import com.game.gameobject.ID;
-import com.game.gameobject.Player;
+import com.game.gameobject.*;
 import com.game.main.*;
 import com.game.utility.Utility;
 
@@ -21,7 +18,7 @@ public class StartScene extends AbstractScene {
     public void add_characters(Handler handler) {
         handler.add_object(new Player(Game.WIDTH/2-32, Game.HEIGHT/2, ID.Player, handler));
         handler.add_object(new BasicEnemy(Game.WIDTH/2+32, Game.HEIGHT/2, ID.BasicEnemy, handler));
-        handler.add_object(new Boss_1(Utility.r.nextInt(Game.WIDTH/2), Utility.r.nextInt(Game.HEIGHT/2), ID.Boss_1, handler));
+        handler.add_object(new Enemy1_2(Utility.r.nextInt(Game.WIDTH), Utility.r.nextInt(Game.HEIGHT), ID.Enemy_1_2, handler));
     }
     public void open_scene(){
         AbstractScene.current_scene_id = Scene_ID.Start_Scene;
